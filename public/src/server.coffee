@@ -12,9 +12,11 @@ class @Server
 
 	call_server:(on_success) ->
 		response = {} 
-		$.ajax '/'+@controller+'/'+@action, (data)->
-			succsess:->
+		$.ajax '/'+@controller+'/'+@action,
+			async: false,
+			success:(data)=>
 				response = data
-			error: ->
+			error:(e) ->
 				response = 'error'
-		return response
+		response
+		

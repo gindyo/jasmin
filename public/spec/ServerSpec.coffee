@@ -8,4 +8,4 @@ describe 'server', ->
     expect(server.controller).toEqual 'checkout'
 
   it 'gets user', ->
-    expect(server.get_user()).toEqual '1'
+    expect(server.get_user().greeting).toEqual 'hi'
