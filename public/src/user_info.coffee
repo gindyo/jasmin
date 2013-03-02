@@ -21,7 +21,7 @@ class @UserInfo
 		@phone = data.phone
 
 
-  fill_text_fields ->
+  fill_text_fields: ->
 		$('#first_name').val @first_name
 		$('#last_name').val @last_name
 		$('#email').val @email
@@ -32,7 +32,7 @@ class @UserInfo
 		$('#zip').val @zip
 		$('#phone').val @phone
   
-  clear_text_fields ->
+  clear_text_fields: ->
 		$('#first_name').val ''
 		$('#last_name').val ''
 		$('#email').val ''
@@ -42,3 +42,6 @@ class @UserInfo
 		$('#state') .val ''
 		$('#zip').val ''
 		$('#phone').val ''
+
+	first_name:->
+		@first_name
