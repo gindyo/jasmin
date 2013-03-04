@@ -21,6 +21,7 @@ class @UserInfo
 		@zip = data.user.zip
 		@phone = data.user.phone
 		@patron_id = data.patron.id
+		
 
 
   fill_text_fields: ->
