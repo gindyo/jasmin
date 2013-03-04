@@ -18,5 +18,5 @@ class @Server
 				response = data
 			error:(e) ->
 				response = 'error'
-		response.user
+		response
 		
