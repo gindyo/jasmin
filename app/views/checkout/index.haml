@@ -1,0 +1,90 @@
+.main
+  #decoration
+  .nav_buttons.float_left
+    %a.btn.btn-block New Patron
+    %a.btn.btn-block Reports
+    %a.btn.btn-block Stats
+    %a.btn.btn-block Merge
+  #search_container.float_left
+    %h5 Search By:
+    %input.input-medium{placeholder:'Last Name', type:'text', id:'last_name_search'}
+    %input.input-medium{placeholder:'Email', type:'text', id:'email_search'}
+    %input.input-medium{placeholder:'Invited By', type:'text', id:'invited_by_search'}
+    %input.input-medium{placeholder:'Table Name', type:'text', id:'table_number_search'}
+    #search.btn Search
+    %input.input-medium.btn.btn-info{placeholder:'Swipe Bid Card', type:'text', id:'bid_card_search'}
+  #search_results
+
+  .clear
+  #pi_sc
+    #patron_info.float_left
+      #user_data.float_left
+        .fields.float_left
+          %label First Name
+          %input#first_name{placeholder: 'First Name'}
+        .fields.float_left
+          %label Last Name
+          %input#last_name{placeholder: 'Last Name'}
+        .fields.float_left
+          %label Adress 1
+          %input#address1{placeholder: 'Adress 1'}
+        .fields.float_left
+          %label Address 2
+          %input#address2{placeholder: 'Address 2'}
+        .fields.float_left
+          %label City
+          %input#city{placeholder: 'City'}
+        .fields.float_left
+          %label State 
+          %input#state{placeholder: 'State '}
+        .fields.float_left
+          %label Zip
+          %input#zip{placeholder: 'Zip'}
+        .fields.float_left
+          %label Phone
+          %input#phone{placeholder: 'Phone'}
+        .fields.float_left
+          %label Email
+          %input#table_number{placeholder: 'Table Number'}
+      #patron_data.float_left
+        .fields.float_left
+          %label Paddle Number
+          %input#paddle_number{placeholder: 'Paddle Number'}
+        .fields.float_left
+          %label Bid Code
+          %input#bid_code{placeholder: 'Bid Code'}
+        .fields.float_left
+          %label Invited By
+          %input#invited_by{placeholder: 'Invited By'}
+        .fields.float_left
+          %label Other Id
+          %input#other_id{placeholder: 'Other Id'}
+        .fields.float_left
+          %label Notes
+          %textarea{placeholder: 'Notes'}
+
+
+    #sc
+      %h5 shopping cart
+      #line_items
+      #pay.btn.btn-warning Payments
+      .rows
+        .cells.align_right.line_items
+          %h6 Total Due:
+          %h6 Paid:
+          %h6 Balance:
+        .cells.line_items.align_left
+          %h6 0 
+          %h6 0
+          %h6 0
+    #pi_buttons
+      .btn.btn-danger Cancel
+      .btn.btn-success Save
+
+          
+
+    .clear
+#payments_dialog
+
+:javascript
+  $('#payments_dialog').modal()
