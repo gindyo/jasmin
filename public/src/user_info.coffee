@@ -9,16 +9,19 @@ class @UserInfo
 	zip : ''
 	phone : ''
 
+
 	constructor: (data) ->  
-		@first_name = data.first_name
-		@last_name = data.last_name
-		@email = data.email
-		@address1 = data.address1
-		@address2 = data.address2
-		@city = data.city
-		@state = data.state
-		@zip = data.zip
-		@phone = data.phone
+		@first_name = data.user.first_name
+		@last_name = data.user.last_name
+		@email = data.user.email
+		@address1 = data.user.address1
+		@address2 = data.user.address2
+		@city = data.user.city
+		@state = data.user.state
+		@zip = data.user.zip
+		@phone = data.user.phone
+		@patron_id = data.patron.id
+		
 
 
   fill_text_fields: ->

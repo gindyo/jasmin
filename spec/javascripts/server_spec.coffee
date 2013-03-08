@@ -1,11 +1,12 @@
 describe 'server', ->
   server = null
   beforeEach ->
-    server = new Server('checkout', 'get_user') 
+    server = new Server('checkout') 
     
 
   it 'should initiate', ->
     expect(server.controller).toEqual 'checkout'
 
-  it 'gets user', ->
-    expect(server.get_user().user.id).toEqual 1
+  it 'call_server with get_user', ->
+    expect(server.ask('get_user', null).user.id).toEqual 1
+ 

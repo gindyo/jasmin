@@ -1,19 +1,15 @@
 class @Server
 	controller: ''
-	action: '' 
 
-	constructor:(controller, action)->
+	constructor:(controller)->
 		@controller = controller
-		@action = action
-
-	get_user:->
-		@call_server()
-
-
-	call_server:(on_success) ->
+		
+	ask:(action,req_data) ->
 		response = {} 
-		$.ajax '/'+@controller+'/'+@action,
+		$.ajax '/'+@controller+'/'+action,
 			async: false,
+			method: 'POST',
+			data: req_data,
 			success:(data)=>
 				response = data
 			error:(e) ->

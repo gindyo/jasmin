@@ -1,0 +1,19 @@
+<div class="product">
+  <div class="item_number">
+    {{#if item_number}}
+      Item # {{item_number}}
+    {{/if}}
+    {{#if adhoc}}
+      <button onclick="ui.removeAdhoc({{id}})">Remove</button>
+    {{else}}
+      <button onclick="ui.removeAdhoc({{line_item_id}})">Remove</button>
+    {{/if}}
+  </div>
+  <div class="price">
+    {{price}}
+  </div>
+  <div class="name">
+    {{quantity}}x 
+    {{name}}
+  </div>
+</div>
