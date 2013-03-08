@@ -10,7 +10,7 @@
     %input.input-medium{placeholder:'Last Name', type:'text', id:'last_name_search'}
     %input.input-medium{placeholder:'Email', type:'text', id:'email_search'}
     %input.input-medium{placeholder:'Invited By', type:'text', id:'invited_by_search'}
-    %input.input-medium{placeholder:'Table Name', type:'text', id:'table_number_search'}
+    %input.input-medium{placeholder:'Table Number', type:'text', id:'table_number_search'}
     #search.btn Search
     %input.input-medium.btn.btn-info{placeholder:'Swipe Bid Card', type:'text', id:'bid_card_search'}
   #search_results
@@ -61,11 +61,23 @@
           %input#invited_by{placeholder: 'Invited By'}
         .fields.float_left
           %label Other Id
-          %input#other_id{placeholder: 'Other Id'}
+          %input#other_identifier{placeholder: 'Other Id'}
         .fields.float_left
           %label Notes
-          %textarea{placeholder: 'Notes'}
-
+          %textarea#notes{placeholder: 'Notes'}
+      .checkboxes.float_left
+        .cb
+          %input#credit_card.append{type: 'checkbox'}
+          %label Credit Card on File
+        .cb
+          %input#credit_card.append{type: 'checkbox'}
+          %label Credit Card on File
+        .cb
+          %input#credit_card.append{type: 'checkbox'}
+          %label Credit Card on File
+        .cb
+          %input#credit_card.append{type: 'checkbox'}
+          %label Credit Card on File
 
     #sc
       %h5 shopping cart
@@ -87,7 +99,7 @@
           
 
     .clear
-#payments_dialog
+=#render 'payments_dialog'
 
 :javascript
   var server = new Server('checkout');

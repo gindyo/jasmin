@@ -23,6 +23,7 @@ class @UI
     vip: {}
 
     constructor: ->
+        @set_observers()
         @first_name = document.getElementById  'first_name'
         @last_name = document.getElementById 'last_name'
         @email = document.getElementById 'email'
@@ -44,6 +45,10 @@ class @UI
         @marketing_opt_out = document.getElementById 'marketing_opt_out'
         @vip = document.getElementById 'vip'
         @organization_member = document.getElementById 'organization_member'
+
+    set_observers:->
+        $('#close_payments_dialog').click =>
+         @close_payments_dialog()
 
     fill_user_text_fields:(user, patron) ->
         @first_name.value = user.first_name
@@ -96,3 +101,8 @@ class @UI
     show_shopping_cart:(shopping_cart) ->
        template = Handlebars.compile($('#template').html())
        $('#shopping_cart').html template(shopping_cart)
+
+    show_payments_dialog:->
+        $('#pay').show()
+    close_payments_dialog:->
+        $('pay').hide()
