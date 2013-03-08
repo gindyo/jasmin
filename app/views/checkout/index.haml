@@ -45,8 +45,11 @@
           %input#phone{placeholder: 'Phone'}
         .fields.float_left
           %label Email
-          %input#table_number{placeholder: 'Table Number'}
+          %input#email{placeholder: 'Table Number'}
       #patron_data.float_left
+        .fields.float_left
+          %label Table Number
+          %input#table_number{placeholder: 'Table Number'}
         .fields.float_left
           %label Paddle Number
           %input#paddle_number{placeholder: 'Paddle Number'}
@@ -87,4 +90,9 @@
 #payments_dialog
 
 :javascript
-  $('#payments_dialog').modal()
+  var server = new Server('checkout');
+  var resp = server.ask('get_user');
+  var user = new UserInfo(resp)
+
+  new UI().fill_user_text_fields(user, resp.patron)
+  //$('#payments_dialog').modal()
